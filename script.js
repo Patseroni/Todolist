@@ -1,35 +1,55 @@
-//when clicking button to add text/task in the list, also add an eventlistener to that text/task.
-//when clicking button the text should also get pushed into an array. 
-//when deleting text, delete from array.
-//Check if user type something and not leaving the input empty, so no empty rows get added.
-//appendChild, document.createElement(element ex "li"), .value.
-//firstElementChild.
-//classList ?
-//add ?
-const addTask = document.querySelector("#addTask");
+
+const addTaskInput = document.querySelector("#addTask");
 const addBtn = document.querySelector("#addBtn");
-const rmBtn = document.querySelector(".removeTaskDiv button");
+const removeTaskDiv = document.querySelector("#removeTaskDiv");
 const list = document.querySelector("ul");
 const infoBox = document.querySelector("strong");
+const nrOfcompleted = document.querySelector("#nrOfCompleted p");
 const taskArray = [];
+let counter = 0;
 
 
-//click add task-button and send the input to a new list element.
 addBtn.addEventListener("click", function () {
 
-    if (addTask.value.length > 0) {
-        const liElement = document.createElement("li");
-        liElement.innerText = addTask.value;
-        list.appendChild(liElement);
+    if (addTaskInput.value.length > 0) {
         infoBox.innerText = "";
-
-        //taskArray[i] = addTask.value;
     }
     else {
         infoBox.innerText = "You can't add an empty task to the list";
-
+        return;
     }
 
-    
+    //An li element is created in the ul-list
+    const liElement = document.createElement("li");
+    liElement.innerText = addTask.value;
+    list.appendChild(liElement);
+
+    //A button is created inside a div
+    const removeTaskBtn = document.createElement("button");
+    removeTaskBtn.innerText = "Remove Task";
+    removeTaskDiv.appendChild(removeTaskBtn);
+
+    addTask.value = "";
+    taskArray.push(addTask.value);
+
+    liElement.addEventListener("click", function () {
+        
+        if(liElement.getAttribute("class") == "completed"){ 
+            counter--;
+        }
+        else{
+            liElement.setAttribute("class") = "completed";
+            counter++;
+        }
+        nrOfcompleted.textContent = `${nrOfcompleted.value} ${counter}`;
+        setAttribute(element);
+        
+
+
+    });
 
 });
+
+
+
+
