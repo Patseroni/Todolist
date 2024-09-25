@@ -26,7 +26,8 @@ h1 {
 }
 
 input {
-    border-radius: 5px;
+    border-radius: 8px;
+    padding-left: 20px;
 }
 
 #inputAndBtnDiv {
@@ -38,42 +39,44 @@ input {
 }
 
 #addTask {
-    width: 300px;
+    width: 280px;
 }
 
 #addBtn {
     width: 100px;
+    border-radius: 8px;
 }
 
-#listAndBtnDiv {
-
-    background-color: #3f6; 
+#listAndBtnDiv { 
     display: flex;
     justify-content: center;
 }
 
-#listDiv {
-     background-color: #dd0; 
-
-
-}
-
-#listDiv ul {
-     background-color: #00d; 
-
-}
-
 li {
-    background-color: #ade; 
+    background-color: #8ae; 
     list-style: none;
-    width: 300px;
+    width: 280px;
     height: 40px;
     margin-bottom: 20px;
-    border-radius: 8px 0px 0px 8px;
+    line-height: 40px;
+    border-radius: 8px;
+    padding-left: 20px;
+}
+
+/* When an li-element is clicked on and marked as completed */
+.completed {
+    list-style: none;
+    width: 280px;
+    height: 40px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    /* extra css when completed */
+    text-decoration: line-through;
+    color: rgb(22, 100, 22);
 }
 
 #removeTaskDiv {
-     background-color: #555; 
+    /* background-color: #555;  */
     display: flex;
     flex-direction: column;
 }
@@ -83,10 +86,10 @@ li {
     width: 100px;
     height: 40px;
     margin-bottom: 20px;
+    border-radius: 8px;
 }
 
 #infoBox {
-     background-color: rgb(79, 123, 167); 
     margin: 20px auto;
     width: 400px;
     height: 30px;
@@ -94,24 +97,11 @@ li {
     color: #a00;
     
 }
-
+/* The counter on the top */
 #nrOfCompleted{
-     background-color: #f7f; 
     margin-left: 30px;
     width: 400px;
     height: 30px;
     margin: auto;
 }
 
-/* When an li-element is marked as completed */
-.completed{
-    background-color: #7da; 
-    list-style: none;
-    width: 300px;
-    height: 40px;
-    margin-bottom: 20px;
-    border-radius: 8px 0px 0px 8px;
-
-    text-decoration: line-through;
-    color: rgb(22, 100, 22);
-}

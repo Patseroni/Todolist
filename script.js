@@ -1,7 +1,10 @@
 
 const addTaskInput = document.querySelector("#addTask");
 const addBtn = document.querySelector("#addBtn");
+
 const removeTaskDiv = document.querySelector("#removeTaskDiv");
+const rmTaskBtn = document.querySelector("#removeTaskDiv button");
+
 const list = document.querySelector("ul");
 const infoBox = document.querySelector("strong");
 const nrOfcompleted = document.querySelector("#nrOfCompleted p");
@@ -50,6 +53,8 @@ addBtn.addEventListener("click", function () {
     });
 
 });
+
+
 
 
 
