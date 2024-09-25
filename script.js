@@ -26,7 +26,7 @@ addBtn.addEventListener("click", function () {
 
     //A button is created inside a div
     const removeTaskBtn = document.createElement("button");
-    removeTaskBtn.innerText = "Remove Task";
+    removeTaskBtn.innerText = "Remove";
     removeTaskDiv.appendChild(removeTaskBtn);
 
     addTask.value = "";
@@ -35,14 +35,15 @@ addBtn.addEventListener("click", function () {
     liElement.addEventListener("click", function () {
         
         if(liElement.getAttribute("class") == "completed"){ 
+            liElement.setAttribute("class", "");
             counter--;
         }
         else{
-            liElement.setAttribute("class") = "completed";
+            liElement.setAttribute("class", "completed");
             counter++;
         }
         nrOfcompleted.textContent = `${nrOfcompleted.value} ${counter}`;
-        setAttribute(element);
+
         
 
 
