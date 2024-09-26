@@ -25,9 +25,16 @@ addBtn.addEventListener("click", function () {
     list.appendChild(liElement);
 
     //A button is created inside a div
+    //const removeTaskBtn = document.createElement("button");
+    //removeTaskBtn.innerText = "Remove";
+    //removeTaskDiv.appendChild(removeTaskBtn);
     const removeTaskBtn = document.createElement("button");
-    removeTaskBtn.innerText = "Remove";
+    const removeTaskImg = document.createElement("img");
+    removeTaskImg.src ="trashcan.png"; 
     removeTaskDiv.appendChild(removeTaskBtn);
+    removeTaskBtn.appendChild(removeTaskImg);
+
+
 
     addTask.value = "";
     taskArray.push(addTaskInput.value);

@@ -10,19 +10,27 @@ body {
 }
 
 header {
-    background-color: #135;
+    background-color: #046;
     width: 100%;
     height: 160px;
     margin-bottom: 30px;
     display: flex;
     align-items: center;
     justify-content: center;
-
+    box-shadow: 0px 0px 6px 0px #000;
+    
 }
 
 h1 {
     font-size: 4em;
     color: #eee;
+}
+
+label{
+    width:170px;
+    color:#579;
+    line-height: 40px;
+    font-size:14px;
 }
 
 input {
@@ -33,6 +41,7 @@ input {
 #inputAndBtnDiv {
     display: flex;
     justify-content: center;
+    margin-right: 170px;
     margin-bottom: 40px;
     height: 40px;
 
@@ -81,11 +90,16 @@ li {
 #removeTaskDiv {
     display: flex;
     flex-direction: column;
+    margin-right: 40px;
 }
 
+img{
+    height:25px;
+    vertical-align: middle;
+}
 
 #removeTaskDiv button {
-    width: 100px;
+    width: 60px;
     height: 40px;
     margin-bottom: 20px;
     border-radius: 8px;
