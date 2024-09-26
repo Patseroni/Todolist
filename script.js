@@ -15,29 +15,25 @@ addBtn.addEventListener("click", function () {
         infoBox.innerText = "";
     }
     else {
-        infoBox.innerText = "You can't add an empty task to the list";
+        infoBox.innerText = "You have to type something";
         return;
     }
 
-    //An li element is created in the ul-list
+    taskArray.push(addTaskInput.value);
+
+    //create an li and add to the ul.
     const liElement = document.createElement("li");
     liElement.innerText = addTask.value;
     list.appendChild(liElement);
 
-    //A button is created inside a div
-    //const removeTaskBtn = document.createElement("button");
-    //removeTaskBtn.innerText = "Remove";
-    //removeTaskDiv.appendChild(removeTaskBtn);
+    //create a remove-button with an img.
     const removeTaskBtn = document.createElement("button");
     const removeTaskImg = document.createElement("img");
-    removeTaskImg.src ="trashcan.png"; 
+    removeTaskImg.src = "trashcan.png";
     removeTaskDiv.appendChild(removeTaskBtn);
     removeTaskBtn.appendChild(removeTaskImg);
 
-
-
     addTask.value = "";
-    taskArray.push(addTaskInput.value);
 
     liElement.addEventListener("click", function () {
 
@@ -54,10 +50,18 @@ addBtn.addEventListener("click", function () {
     });
 
     removeTaskBtn.addEventListener("click", function () {
+
+        const taskArrayElement = taskArray.indexOf(liElement.innerText);
+        
+        //if it returns >=0, it means that the element exists in the array and matches the liElement-text. -1 means that it does not exist. 
+        if (taskArrayElement >= 0) {     
+            // 1 means delete only one element. 2 means delete that element and the element after.
+            taskArray.splice(taskArrayElement, 1);
+        }
+
         liElement.remove();
         removeTaskBtn.remove();
     });
-
 });
 
 

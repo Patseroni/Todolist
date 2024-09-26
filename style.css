@@ -75,14 +75,12 @@ li {
     padding-left: 20px;
 }
 
-/* When an li-element is clicked on and marked as completed */
 .completed {
     list-style: none;
     width: 280px;
     height: 40px;
     margin-bottom: 20px;
     border-radius: 8px;
-    /* extra css when completed */
     text-decoration: line-through;
     background-color: #aea;
 }
@@ -113,7 +111,7 @@ img{
     color: #a00;
     
 }
-/* The counter on the top */
+
 #nrOfCompleted{
     margin-left: 30px;
     width: 400px;
