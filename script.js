@@ -1,10 +1,7 @@
 
 const addTaskInput = document.querySelector("#addTask");
 const addBtn = document.querySelector("#addBtn");
-
 const removeTaskDiv = document.querySelector("#removeTaskDiv");
-const rmTaskBtn = document.querySelector("#removeTaskDiv button");
-
 const list = document.querySelector("ul");
 const infoBox = document.querySelector("strong");
 const nrOfcompleted = document.querySelector("#nrOfCompleted p");
@@ -33,26 +30,31 @@ addBtn.addEventListener("click", function () {
     removeTaskDiv.appendChild(removeTaskBtn);
 
     addTask.value = "";
-    taskArray.push(addTask.value);
+    taskArray.push(addTaskInput.value);
 
     liElement.addEventListener("click", function () {
-        
-        if(liElement.getAttribute("class") == "completed"){ 
+
+        if (liElement.getAttribute("class") == "completed") {
             liElement.setAttribute("class", "");
             counter--;
         }
-        else{
+        else {
             liElement.setAttribute("class", "completed");
             counter++;
         }
-        nrOfcompleted.textContent = `${nrOfcompleted.value} ${counter}`;
-
-        
-
+        nrOfcompleted.textContent = `Completed tasks: ${counter}`;
 
     });
 
+    removeTaskBtn.addEventListener("click", function () {
+        liElement.remove();
+        removeTaskBtn.remove();
+    });
+
 });
+
+
+
 
 
 
